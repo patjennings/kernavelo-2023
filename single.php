@@ -1,17 +1,16 @@
 <?php get_header(); ?>
-<div class="container-fluid" id="main-content">
-    <div class="row">
-	<div class="col-sm-12">
-	    <?php
-	    if ( have_posts() ) : while ( have_posts() ) : the_post();
+<div id="content" class="flex flex-row">
+       <div id="primary" class="content-area w-full sm:w-3/4 md:w-3/4 p-6">
+<?php
+       if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-	    get_template_part( 'content', get_post_format() );
+get_template_part( 'content', get_post_format() );
 
-	    endwhile; endif;
-	    ?>
+endwhile; endif;
+?>
 
-	</div> <!-- /.col -->
-    </div> <!-- /.row -->
-</div>
+    </div><!-- .content-area -->
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+

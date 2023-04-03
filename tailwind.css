@@ -28,8 +28,18 @@ Theme Name: Kernavélo 2023
             @apply text-blue-400;
         }
     }
+    p{
+        @apply text-gray-900 mb-8;
+        
 }
-
+    input{
+        @apply bg-white rounded-md border-gray-200 border px-4 py-2 mb-2 transition-all;
+    }
+    button{
+        @apply bg-blue-600 rounded-md text-white px-4 py-2;
+    }
+}
+/* top menu, dans le header */
 #menu-top-menu{
     .menu-item{
         a{
@@ -40,6 +50,7 @@ Theme Name: Kernavélo 2023
         }
     }
 }
+/* menu de navigation principal */
 .menu-main-menu-container{
     z-index: 9999;
     #menu-main-menu{
