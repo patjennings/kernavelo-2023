@@ -1,0 +1,9 @@
+node_modules/*
+.sass-cache/*
+.sass-cache
+app/.sass-cache/
+app/.sass-cache/*
+web/
+.DS_Store
+.projectile
+package-lock.json

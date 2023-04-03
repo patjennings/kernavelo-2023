@@ -1,0 +1,96 @@
+/*!
+Theme Name: Kernavélo 2023
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body{
+        @apply bg-gray-100 text-gray-900;
+    }
+    h1 {
+        @apply text-3xl my-2 text-blue-600;
+    }
+    h2 {
+        @apply text-2xl my-2 text-blue-600;
+    }
+    h3 {
+        @apply text-xl my-2;
+    }
+    h4 {
+        @apply text-lg my-2;
+    }
+    a{
+        @apply text-blue-600;
+        &:hover{
+            @apply text-blue-400;
+        }
+    }
+}
+
+#menu-top-menu{
+    .menu-item{
+        a{
+            @apply px-4 py-4 bg-white text-blue-600 mr-3 rounded-b-lg transition-all block;
+            &:hover{
+                @apply bg-green-600 text-white;
+            }
+        }
+    }
+}
+.menu-main-menu-container{
+    z-index: 9999;
+    #menu-main-menu{
+        .menu-item{
+            @apply cursor-pointer;
+            a{
+                @apply block px-5 py-4 bg-blue-600 text-white;
+                &:hover{
+                    @apply bg-blue-800;
+                }
+            }
+            .menu-item-type-custom{
+                a{
+                    @apply text-gray-700;
+                    &:hover{
+                        @apply bg-none text-gray-700;
+
+                    }
+                }
+            }
+            .sub-menu{
+                @apply bg-white opacity-0 absolute w-64 rounded-b-lg transition-all;
+  	            visibility: hidden;
+                z-index: 9999;
+                .menu-item-object-page{
+                    a{
+                        @apply block bg-blue-800 transition-all duration-200 border-blue-750 border-b;
+                        &:hover{
+                            @apply bg-blue-600
+                        }
+                    }
+                }
+                .menu-item-object-custom{
+                    a{
+                        @apply text-gray-200 bg-blue-800;
+                        &:hover{
+                            @apply bg-blue-800 text-gray-200;
+                        }
+                    }
+                }
+            }
+            &.menu-item-has-children{
+                @apply w-fit h-12;
+                &:hover{
+                    .sub-menu{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+    }
+}
