@@ -10,4 +10,4 @@ Le thème utilise Tailwind. `npm start` lance la compilation w/ Tailwind (et Pos
 - [x] template de catégories
 - [x] Clics sur Actions/...
 - [ ] Fond w/ motifs
-- [ ] Animation sur le logo
+- [x] Animation sur le logo

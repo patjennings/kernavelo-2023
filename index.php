@@ -1,7 +1,7 @@
 <!-- ce template sert d'affichage aux posts !-->
 <?php get_header(); ?>
-<div id="content" class="flex flex-col laptop:flex-row bg-white">
-    <div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3 p-6">
+<div id="content" class="flex flex-col w-full laptop:flex-row bg-white p-6">
+    <div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3">
         <?php
         if ( have_posts() ) : while ( have_posts() ) : the_post();
 

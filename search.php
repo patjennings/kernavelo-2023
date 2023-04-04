@@ -10,11 +10,11 @@
 get_header(); ?>
 
     <div id="content" class="flex flex-col laptop:flex-row bg-white">
-    <div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3 p-6">
+    <div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3 p-0">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+    <header class="page-header border-gray-100 border-b px-10 pt-8 pb-4">
 				<h1 class="page-title">
 				<?php
 				/* translators: %s: The search query. */

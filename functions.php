@@ -180,12 +180,24 @@ function register_kernavelo_menus() {
     register_nav_menus(
         array(
             'main-menu' => __( 'Main Menu' ),
-            'top-menu' => __( 'Top Menu' )
+            'top-menu' => __( 'Top Menu' ),
+            'menu-footer' => __( 'Footer Menu' ),
         )
     );
 }
 add_action( 'init', 'register_kernavelo_menus' );
 
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+    if( is_category() ) {
+
+        $title = single_cat_title( '', false );
+
+    }
+
+    return $title;
+
+});
 // Custom menu
 // function wpb_custom_new_menu() {
 // register_nav_menu('kernavelo-menu',__( 'Menu Kernavélo' ));

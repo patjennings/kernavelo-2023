@@ -1,6 +1,14 @@
 </div>
 </div>
-<footer class="footer">
+<footer class="footer p-10 bg-gray-700 text-white">
+<?php
+      wp_nav_menu(
+          array(
+              'theme_location' => 'menu-footer',
+              'menu_class' => '',
+          )
+      );
+?>
 <?php wp_footer(); ?>
 </footer>
 

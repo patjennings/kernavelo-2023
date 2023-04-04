@@ -44,7 +44,13 @@
                         ?>
                     </div>
                     <div class="flex flex-col flex-wrap pb-10 pt-6 laptop:pt-0">
-                        <a class="blog-nav-item active home flex justify-center laptop:justify-start" href="<?php echo get_bloginfo( 'wpurl' );?>"><img class="h-20" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo_femme_couleur.png" title="<?php echo get_bloginfo('wptitle');?>" /></a>
+                        <a class="blog-nav-item logo active home flex justify-center laptop:justify-start" href="<?php echo get_bloginfo( 'wpurl' );?>">
+     <img class="h-16 laptop:hidden" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo_femme_couleur.png" title="<?php echo get_bloginfo('wptitle');?>" />
+     <img class="logo-naked h-20 hidden laptop:block" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo--naked.svg" title="<?php echo get_bloginfo('wptitle');?>" />
+     <img class="coiffe-homme hidden laptop:block absolute" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo-coiffe-homme.svg" title="<?php echo get_bloginfo('wptitle');?>" />
+     <img class="coiffe-femme hidden laptop:block absolute" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo-coiffe-femme.svg" title="<?php echo get_bloginfo('wptitle');?>" />
+     <img class="roue hidden laptop:block absolute" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo--roue.svg" title="<?php echo get_bloginfo('wptitle');?>" />
+     </a>
                     </div>
                     <div class="bg-blue-600 rounded-t-lg overflow-hidden">
                         <?php
@@ -64,7 +70,7 @@
                 wp_nav_menu(
                     array(
                         'theme_location' => 'main-menu',
-                        'menu_class' => 'main-menu-mobile p-6 flex-col flex absolute top-0 left-0 w-screen h-screen overflow-scroll bg-gray-900 text-white hidden z-20 transition-all opacity-0 laptop:hidden',
+                        'menu_class' => 'main-menu-mobile p-6 flex-col flex fixed top-0 left-0 w-screen h-screen overflow-scroll bg-gray-900 text-white hidden z-20 transition-all opacity-0 laptop:hidden',
                     )
                 );
                 ?>
