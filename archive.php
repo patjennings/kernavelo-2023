@@ -1,30 +1,28 @@
+<?php get_header(); ?>
 <?php
-/*
-  Template Name: Archives
-*/
-get_header(); ?>
-
-    <div id="content" class="flex flex-row">
-    <div id="primary" class="content-area w-full sm:w-3/4 md:w-3/4 p-6">
-
-    <header class="post-header">
-    <h2 class="post-title">Archives</h2>
-    </header>
-    <!-- https://stackoverflow.com/questions/25952213/wordpress-list-all-posts-by-year-with-pagination	 -->
-<?php foreach(posts_by_year() as $year => $posts) : ?>
-    <h2 class="title"><?php echo $year; ?></h2>
-
-        <ul>
-<?php foreach($posts as $post) : setup_postdata($post); ?>
-        <li>
-        <a href="<?php the_permalink(); ?>"><?php the_title(); ?> - <span class="small text-muted"><?php the_date(); ?></span></a>
-            </li>
-<?php endforeach; ?>
-            </ul>
-<?php endforeach; ?>
-                </div><!-- #content -->
+$description = get_the_archive_description();
+?>
+<div id="content" class="flex flex-col laptop:flex-row bg-white">
+    <?php if ( have_posts() ) : ?>
+    <div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3 p-6">
+            <header>
+		            <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+		            <?php if ( $description ) : ?>
+			              <div class="archive-description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
+		            <?php endif; ?>
+            </header>
+            <div>
+	              <?php while ( have_posts() ) : ?>
+		                <?php the_post(); ?>
+		                <?php get_template_part( 'content-list', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); ?>
+	              <?php endwhile; ?>
 
 
+    <?php else : ?>
+	              <?php get_template_part( 'content-list' ); ?>
+    <?php endif; ?>
+            </div> <!-- test 1 -->
+        </div> <!-- test 2 -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+        <?php get_sidebar(); ?>
+        <?php get_footer(); ?>

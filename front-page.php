@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="slider" class="w-full h-96 overflow-hidden">
+<div id="slider" class="w-full h-128 laptop:h-96 overflow-hidden relative">
     <ul id="slides-list" class="h-full transition-all duration-1000">
         <?php
         $args = array(
@@ -12,22 +12,22 @@
             while($post_query->have_posts() ) {
                 $post_query->the_post();
         ?>
-            <li class="slide flex flex-wrap h-full w-full float-left">
-                <div class="image w-2/3">
+            <li class="slide flex flex-col flex-wrap h-full w-full float-left laptop:flex-row">
+                <div class="image w-full h-1/2 laptop:h-full laptop:w-2/3">
                     <?php the_post_thumbnail('post-thumbnail', ['class' => 'w-screen img-responsive responsive--full', 'title' => 'Feature image']); ?>
                 </div>
-                <div class="cartel w-1/3 flex flex-col p-6 bg-blue-800 text-white">
-                    <h2 class="text-white"><?php the_title(); ?></h2>
-                    <p class="text-white"><?php the_excerpt(); ?></p>
-                </div>
+                     <a class="cartel h-1/2 flex flex-col p-6 bg-blue-800 text-white block laptop:h-full laptop:w-1/3" href="<?php echo esc_url( get_permalink() ); ?>">
+                    <h2 class="text-white text-lg font-bold"><?php the_title(); ?></h2>
+                    <p class="text-white text-base hidden laptop:block"><?php echo(get_the_excerpt()); ?></p>
+                </a>
             </li>
         <?php
         }
         }
         ?>
 </div>
-<div id="content" class="flex flex-row">
-<div id="primary" class="content-area w-full sm:w-3/4 md:w-3/4 p-6">
+<div id="content" class="flex flex-col laptop:flex-row bg-white">
+<div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3 p-6">
 
         <?php if ( have_posts() ) : ?>
 

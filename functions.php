@@ -188,7 +188,9 @@ add_action( 'init', 'register_kernavelo_menus' );
 
 // Custom menu
 // function wpb_custom_new_menu() {
-  // register_nav_menu('kernavelo-menu',__( 'Menu Kernavélo' ));
+// register_nav_menu('kernavelo-menu',__( 'Menu Kernavélo' ));
 // }
 // add_action( 'init', 'wpb_custom_new_menu' );
+// Creating the widget
 ?>
+

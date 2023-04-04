@@ -30,8 +30,7 @@ Theme Name: Kernavélo 2023
     }
     p{
         @apply text-gray-900 mb-8;
-        
-}
+    }
     input{
         @apply bg-white rounded-md border-gray-200 border px-4 py-2 mb-2 transition-all;
     }
@@ -50,9 +49,11 @@ Theme Name: Kernavélo 2023
         }
     }
 }
+
+
 /* menu de navigation principal */
 .menu-main-menu-container{
-    z-index: 9999;
+    /* @apply z-10; */
     #menu-main-menu{
         .menu-item{
             @apply cursor-pointer;
@@ -72,10 +73,20 @@ Theme Name: Kernavélo 2023
                 }
             }
             .sub-menu{
-                @apply bg-white opacity-0 absolute w-64 rounded-b-lg transition-all;
-  	            visibility: hidden;
-                z-index: 9999;
-                .menu-item-object-page{
+                @apply bg-blue-800 opacity-0 absolute w-80 rounded-b-lg transition-all overflow-hidden z-20;
+                visibility: hidden;
+                .menu-item-type-yspl_win{
+                    @apply bg-transparent p-6;
+                    .yspl_win_title{
+                        @apply text-base text-white pb-3 font-bold;
+}
+                    .textwidget p{
+                        @apply text-base text-gray-200 mb-0;
+                        
+}
+                    
+}
+                .menu-item-object-page, .menu-item-type-taxonomy{
                     a{
                         @apply block bg-blue-800 transition-all duration-200 border-blue-750 border-b;
                         &:hover{
@@ -103,5 +114,90 @@ Theme Name: Kernavélo 2023
             }
         }
 
+    }
+    /* version mobile */
+    #menu-main-menu-1{
+        @apply pt-16;
+        .menu-item{
+            a{
+                @apply pt-12 pb-3 block text-gray-300;
+            }
+            .sub-menu{
+                a{
+                    @apply block py-4 text-white border-gray-700 border-b;
+                    &:hover{
+                        @apply bg-blue-800;
+                    }
+                }
+                .menu-item{
+                    &.menu-item-object-yspl_win{
+                        @apply hidden;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* events list on sidebar */
+.event_item{
+    @apply bg-white p-4 rounded-md;
+    a{
+        h5{
+            @apply text-base;
+        }
+    }
+    .event_data{
+        @apply text-gray-500;
+        &.event_date {
+            time span{
+                @apply pb-2 text-gray-500 text-base opacity-100 font-normal;
+            }
+        }
+        &.event_category{
+            @apply pb-2;
+        }
+        &.event_location{
+            @apply pb-2;
+            span{
+                @apply text-base not-italic;
+            }
+        }
+        .eventpost-date-export{
+            a{
+                @apply text-sm block px-3 py-1 rounded-full bg-green-600 text-white font-normal;
+                &:hover{
+                    @apply bg-green-800;
+                }
+            }
+        }
+    }
+    &:first-child{
+        a{
+            h5{
+                @apply text-2xl;
+            }
+        }
+    }
+}
+aside{
+    h2{
+        @apply text-base font-bold;
+    }
+}
+
+#slider{
+    .slider-nav{
+        @apply flex flex-row absolute bottom-0 p-3;
+        .slider-nav-item{
+            @apply px-3 py-1 bg-white text-blue-600 rounded-full mr-1 cursor-pointer transition-all;
+            &:hover{
+                @apply bg-blue-400 text-white;
+                
+            }
+            &.active{
+                @apply bg-green-600 text-white;
+            }
+        }
     }
 }

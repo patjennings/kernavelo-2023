@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<div id="content" class="flex flex-row">
-       <div id="primary" class="content-area w-full sm:w-3/4 md:w-3/4 p-6">
+<div id="content" class="flex flex-col laptop:flex-row bg-white">
+       <div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3 p-6">
 <?php
        if ( have_posts() ) : while ( have_posts() ) : the_post();
 

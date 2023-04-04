@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div id="content" class="flex flex-col laptop:flex-row bg-white">
+    <div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3 p-6">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -33,7 +33,7 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'content-list', 'search' );
 
 				// End the loop.
 			endwhile;
@@ -54,8 +54,7 @@ get_header(); ?>
 		endif;
 		?>
 
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+		</div><!-- .site-main -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

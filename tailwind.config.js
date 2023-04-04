@@ -4,7 +4,18 @@ module.exports = {
         './**/*.php'
     ],
     theme: {
-        extend: {},
+        screens: {
+            'phone': '480px',
+            'tablet': '640px',
+            'laptop': '1024px',
+            'desktop': '1440px',
+        },
+        extend: {
+            backgroundImage: {
+                'header-image': 'url("assets/images/header.png")',
+                'site-texture': ''
+            }
+        },
         colors: {
             transparent: 'transparent',
             'white': '#ffffff',

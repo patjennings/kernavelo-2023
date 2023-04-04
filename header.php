@@ -15,9 +15,10 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title></title>
+        <title><?php wp_title(''); ?></title>
+        <link rel="icon" type="image/x-icon" href="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/favicon.ico">
         <link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
-        <script src="<?php echo get_bloginfo( 'template_directory' );?>/js/slideshow.js"/>
+        <script src="<?php echo get_bloginfo( 'template_directory' );?>/js/scripts.js"></script>
                       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
                       <!--[if lt IE 9]>
                       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,43 +30,49 @@
     <body <?php body_class('bg-gray'); ?>>
 
         <!-- Start container -->
-        <div id="page" class="site container mx-auto bg-white">
+        <div id="page" class="site container mx-auto bg-transparent">
 	          <div id="main" class="site-inner flex flex-row flex-wrap">
-                <header class="bg-gray-100 w-full">
-     <div class="flex flex-row justify-end">
+                <header class="bg-transparent w-full laptop:bg-header-image bg-no-repeat">
+                    <div class="flex flex-row justify-end">
                         <?php
                         wp_nav_menu(
                             array(
                                 'theme_location' => 'top-menu',
-                                'menu_class' => 'top-menu flex flex-row',
+                                'menu_class' => 'hidden laptop:flex top-menuflex-row',
                             )
                         );
                         ?>
                     </div>
-                    <div class="flex flex-col flex-wrap pb-10">
-                        <a class="blog-nav-item active home" href="<?php echo get_bloginfo( 'wpurl' );?>"><img class="h-20" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo_femme_couleur.png" title="<?php echo get_bloginfo('wptitle');?>" /></a>
+                    <div class="flex flex-col flex-wrap pb-10 pt-6 laptop:pt-0">
+                        <a class="blog-nav-item active home flex justify-center laptop:justify-start" href="<?php echo get_bloginfo( 'wpurl' );?>"><img class="h-20" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo_femme_couleur.png" title="<?php echo get_bloginfo('wptitle');?>" /></a>
                     </div>
-                    <div class="bg-blue-600 rounded-t-lg">
+                    <div class="bg-blue-600 rounded-t-lg overflow-hidden">
                         <?php
                         wp_nav_menu(
                             array(
                                 'theme_location' => 'main-menu',
-                                'menu_class' => 'main-menu flex flex-row',
+                                'menu_class' => 'main-menu flex-row hidden laptop:flex',
                             )
                         );
                         ?>
                     </div>     
                 </header>
-                <!-- NAVIGATION MOBILE -->
-                <!-- <div id="nav-mobile">
-                     <div class="container-fluid">
-                     <button id="menu-open" class="visible"><i class="ico ico-large i-menu"></i></button>
-                     <div id="menu-wrapper" class="hidden">
-                     <button id="menu-close"><i class="ico ico-large i-cross"></i></button>
-                     <ul class="main-menu">
-                     <li><a class="blog-nav-item active" href="<?php echo get_bloginfo( 'wpurl' );?>">Accueil</a></li>
-                     </ul>
 
-                     </div>
-                     </div>
-                     </div> -->
+
+                <!-- NAVIGATION MOBILE -->
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'main-menu',
+                        'menu_class' => 'main-menu-mobile p-6 flex-col flex absolute top-0 left-0 w-screen h-screen overflow-scroll bg-gray-900 text-white hidden z-20 transition-all opacity-0 laptop:hidden',
+                    )
+                );
+                ?>
+                <div id="nav-mobile" class="fixed left-4 top-4 z-30 laptop:hidden">
+                    <button id="menu-open" class="visible bg-transparent p-0">
+                        <img src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/menu.svg"/>
+                    </button>
+                    <button id="menu-close" class="hidden z-10 bg-transparent p-0">
+                        <img src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/close.svg"/>
+                    </button>
+                </div> 
