@@ -14,7 +14,7 @@
         ?>
             <li class="slide flex flex-col flex-wrap h-full w-full float-left laptop:flex-row">
                 <div class="image w-full h-1/2 laptop:h-full laptop:w-2/3">
-                    <?php the_post_thumbnail('post-thumbnail', ['class' => 'w-screen img-responsive responsive--full', 'title' => 'Feature image']); ?>
+<?php the_post_thumbnail('post-thumbnail', ['class' => 'w-screen img-responsive responsive--full -top-[35%] relative ', 'title' => 'Feature image']); ?>
                 </div>
                      <a class="cartel h-1/2 flex flex-col p-8 bg-blue-800 text-white block laptop:h-full laptop:w-1/3" href="<?php echo esc_url( get_permalink() ); ?>">
                     <h2 class="text-white text-xl mb-4 laptop:text-2xl desktop:text-3xl"><?php the_title(); ?></h2>
