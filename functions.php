@@ -198,6 +198,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
     return $title;
 
 });
+add_theme_support( 'post-thumbnails' );
 // Custom menu
 // function wpb_custom_new_menu() {
 // register_nav_menu('kernavelo-menu',__( 'Menu Kernavélo' ));
