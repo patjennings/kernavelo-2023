@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="slider" class="w-full h-128 laptop:h-96 overflow-hidden relative">
+<div id="slider" class="w-full h-80 laptop:h-96 overflow-hidden relative">
     <ul id="slides-list" class="h-full transition-all duration-1000">
         <?php
         $args = array(
@@ -16,7 +16,7 @@
                 <div class="image w-full h-1/2 laptop:h-full laptop:w-2/3">
 <?php the_post_thumbnail('post-thumbnail', ['class' => 'w-screen img-responsive responsive--full -top-[35%] relative ', 'title' => 'Feature image']); ?>
                 </div>
-                     <a class="cartel h-1/2 flex flex-col p-8 bg-blue-800 text-white block laptop:h-full laptop:w-1/3" href="<?php echo esc_url( get_permalink() ); ?>">
+                     <a class="cartel h-1/2 flex flex-col relative p-4 bg-blue-800 text-white block laptop:h-full laptop:p-8 laptop:w-1/3" href="<?php echo esc_url( get_permalink() ); ?>">
                     <h2 class="text-white text-xl mb-4 laptop:text-2xl desktop:text-3xl"><?php the_title(); ?></h2>
                     <p class="text-gray-300 text-base hidden laptop:block"><?php echo(get_the_excerpt()); ?></p>
                 </a>
