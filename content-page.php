@@ -1,7 +1,7 @@
 <div class="post">
           <div class="row">
           <header class="mb-6">
-          <h1 class="text-3xl font-bold"><?php the_title(); ?></h1>
+          <h1 class="text-3xl font-bold text-blue-600"><?php the_title(); ?></h1>
                   </header>
                   </div>
                   <div class="row">

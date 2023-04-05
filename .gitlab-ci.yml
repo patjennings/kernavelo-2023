@@ -1,0 +1,47 @@
+image: ruby:2.6.2
+
+cache:
+  paths: 
+    - vendor/
+
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+build:
+  only:
+    - master
+  stage: build
+  script:
+    - mkdir kernavelo2023
+    - cp -r * kernavelo2023
+    - rm -R kernavelo2023/kernavelo2023
+  artifacts:
+    name: "$CI_JOB_NAME"
+    paths:
+      - public
+
+deploy:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+      - scp -rp ./kernavelo2023 "$USER"@"$HOST":/var/www/kernavelo.org/wp-content/themes
+  only:
+    - master
+
+# this prevents some problem @ converting sass in Jekyll (US ASCII error when converting)
+variables:
+  LC_ALL: "C.UTF-8"
+  LANG: "en_US.UTF-8"
+  LANGUAGE: "en_US.UTF-8"
+  PASSWORD: "$PASSWORD"
+  USERNAME: "$USER"
+  HOST: "$HOST"
+
+# phase build : création d'un artifact public/, que l'on utilise dans le job deploy. Cet artifact public/ n'est utilisable que dans le contexte du build. On y accède, dans deploy, grâce à dependencies: - build
