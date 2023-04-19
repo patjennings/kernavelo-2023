@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
 	<aside id="secondary" class="sidebar widget-area w-full w-full laptop:w-1/3 desktop:w-1/3 p-6 bg-orange-200" role="complementary">
 		<?php dynamic_sidebar( 'sidebar' ); ?>
 	</aside><!-- .sidebar .widget-area -->

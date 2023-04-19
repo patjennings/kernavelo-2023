@@ -205,5 +205,5 @@ add_theme_support( 'post-thumbnails' );
 // }
 // add_action( 'init', 'wpb_custom_new_menu' );
 // Creating the widget
+// Custom Post Type
 ?>
-
