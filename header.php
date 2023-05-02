@@ -25,6 +25,22 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         <?php wp_head();?>
+     <!-- Matomo -->
+     <script>
+     var _paq = window._paq = window._paq || [];
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var u="//analytics.kernavelo.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();
+</script>
+    <!-- End Matomo Code -->
+
     </head>
 
     <body <?php body_class('bg-gray'); ?>>
@@ -44,7 +60,7 @@
                         ?>
                     </div>
                     <div class="flex flex-col flex-wrap pb-10 pt-6 laptop:pt-0">
-                        <a class="blog-nav-item logo active home flex justify-center laptop:justify-start" href="<?php echo get_bloginfo( 'wpurl' );?>">
+     <a class="blog-nav-item logo active home flex justify-center laptop:justify-start" href="<?php echo get_bloginfo( 'wpurl' );?>">
      <img class="h-16 laptop:hidden" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo_femme_couleur.png" title="<?php echo get_bloginfo('wptitle');?>" />
      <img class="logo-naked h-20 hidden laptop:block" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo--naked.svg" title="<?php echo get_bloginfo('wptitle');?>" />
      <img class="coiffe-homme hidden laptop:block absolute" src="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/logo-coiffe-homme.svg" title="<?php echo get_bloginfo('wptitle');?>" />

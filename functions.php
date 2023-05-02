@@ -206,4 +206,39 @@ add_theme_support( 'post-thumbnails' );
 // add_action( 'init', 'wpb_custom_new_menu' );
 // Creating the widget
 // Custom Post Type
+
+// Creating the widget
+class wpk_newsletter extends WP_Widget {
+    // The construct part
+    function __construct() {
+        parent::__construct(
+            // Base ID of your widget
+            'wpk_newsletter', 
+            // Widget name will appear in UI
+            __('Inscription newsletter', 'wpk_widget_domain'), 
+            // Widget description
+            array( 'description' => __( 'Sample widget based on WPBeginner Tutorial', 'wpb_widget_domain' ), )
+        );
+    }
+    // Creating widget front-end
+    public function widget( $args, $instance ) {
+        // echo "inscription à la newsletter";
+        $output = "<form id='sub_newsletter'>";
+        $output .= "<input type='text'/>";
+        $output .= "<button>S'inscrire</button>";
+        $output .= "</form>";
+        echo $output;
+    }
+    // Creating widget Backend
+    public function form( $instance ) {
+    }
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+    }
+    // Class wpb_widget ends here
+}
+function wpk_newsletter() {
+    register_widget( 'wpk_newsletter' );
+}
+add_action( 'widgets_init', 'wpk_newsletter' );
 ?>
