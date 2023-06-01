@@ -1,31 +1,6 @@
 <?php get_header(); ?>
-<div id="slider" class="w-full h-80 laptop:h-96 overflow-hidden relative">
-    <ul id="slides-list" class="h-full transition-all duration-1000">
-        <?php
-        $args = array(
-            'post_type' => 'post'
-        );
-
-        $post_query = new WP_Query($args);
-
-        if($post_query->have_posts() ) {
-            while($post_query->have_posts() ) {
-                $post_query->the_post();
-        ?>
-            <li class="slide flex flex-col flex-wrap h-full w-full float-left laptop:flex-row">
-                <div class="image w-full h-1/2 laptop:h-full laptop:w-2/3">
-<?php the_post_thumbnail('post-thumbnail', ['class' => 'w-screen img-responsive responsive--full -top-[35%] relative ', 'title' => 'Feature image']); ?>
-                </div>
-                     <a class="cartel h-1/2 flex flex-col relative p-4 bg-blue-800 text-white block laptop:h-full laptop:p-8 laptop:w-1/3" href="<?php echo esc_url( get_permalink() ); ?>">
-                    <h2 class="text-white text-xl mb-4 laptop:text-2xl desktop:text-3xl"><?php the_title(); ?></h2>
-                    <p class="text-gray-300 text-base hidden laptop:block"><?php echo(get_the_excerpt()); ?></p>
-                </a>
-            </li>
-        <?php
-        }
-        }
-        ?>
-</div>
+<?php echo do_shortcode( '[smoothslider id="1"]' ); ?> 
+<?php /*if( function_exists( "get_smooth_slider_recent" ) ){ get_smooth_slider_recent(); }*/ ?>
 <div id="content" class="flex flex-col laptop:flex-row bg-white">
 <div id="primary" class="content-area w-full laptop:w-2/3 desktop:w-2/3 p-10">
 

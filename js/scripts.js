@@ -14,7 +14,8 @@ let menuState = false;
 
 window.onload = function(e){
     initMenu();
-    initSlideshow();
+    // initSlideshow();
+    disableSmoothSliderStyles();
 }
 window.onresize = function(e){
     totalWidth = mainContainer.offsetWidth;
@@ -55,6 +56,30 @@ function initMenu(){
     });
 }
 // slideshow
+function disableSmoothSliderStyles(){
+
+    let intrvDisable = setInterval(disableBody, 300);
+
+    function disableBody(){
+        const ssContainer = document.querySelector('.smooth_slider');
+        ssContainer.removeAttribute('style');
+        const containerTitles = ssContainer.getElementsByTagName('h2');
+        const containerTexts = ssContainer.getElementsByTagName('span');
+        const containerImgs = ssContainer.getElementsByTagName('img');
+        for(let e in containerTitles){
+            containerTitles[e].removeAttribute('style');
+            
+        }
+        for(let f in containerTexts){
+            containerTexts[f].removeAttribute('style');
+            
+        }
+        for(let g in containerImgs){
+            containerImgs[g].removeAttribute('style');
+            
+        }
+}
+}
 function launchInterval(){
     intrv = setInterval(changeSlide, tempo);
 }

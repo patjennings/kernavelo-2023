@@ -576,14 +576,6 @@ a:hover {
   position: absolute;
 }
 
-.relative {
-  position: relative;
-}
-
-.-top-\[35\%\] {
-  top: -35%;
-}
-
 .left-0 {
   left: 0px;
 }
@@ -610,10 +602,6 @@ a:hover {
 
 .z-30 {
   z-index: 30;
-}
-
-.float-left {
-  float: left;
 }
 
 .mx-auto {
@@ -649,10 +637,6 @@ a:hover {
   display: none;
 }
 
-.h-1\/2 {
-  height: 50%;
-}
-
 .h-16 {
   height: 4rem;
 }
@@ -661,16 +645,13 @@ a:hover {
   height: 5rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
-.h-full {
-  height: 100%;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-full {
@@ -679,11 +660,6 @@ a:hover {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .flex-row {
@@ -737,9 +713,9 @@ a:hover {
   background-color: rgb(43 84 133 / var(--tw-bg-opacity));
 }
 
-.bg-blue-800 {
+.bg-gray-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(15 39 67 / var(--tw-bg-opacity));
+  background-color: rgb(235 234 241 / var(--tw-bg-opacity));
 }
 
 .bg-gray-700 {
@@ -766,11 +742,6 @@ a:hover {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(235 234 241 / var(--tw-bg-opacity));
-}
-
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
@@ -783,16 +754,12 @@ a:hover {
   padding: 2.5rem;
 }
 
-.p-4 {
-  padding: 1rem;
+.p-5 {
+  padding: 1.25rem;
 }
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .px-10 {
@@ -805,8 +772,16 @@ a:hover {
   padding-bottom: 1.5rem;
 }
 
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .pb-4 {
@@ -821,14 +796,6 @@ a:hover {
   padding-top: 2rem;
 }
 
-.pb-3 {
-  padding-bottom: 0.75rem;
-}
-
-.pb-1 {
-  padding-bottom: 0.25rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -837,11 +804,6 @@ a:hover {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .text-sm {
@@ -861,11 +823,6 @@ a:hover {
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(43 84 133 / var(--tw-text-opacity));
-}
-
-.text-gray-300 {
-  --tw-text-opacity: 1;
-  color: rgb(179 176 193 / var(--tw-text-opacity));
 }
 
 .text-gray-400 {
@@ -896,10 +853,6 @@ a:hover {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.duration-1000 {
-  transition-duration: 1000ms;
 }
 
 .post-content h1 {
@@ -1405,6 +1358,143 @@ aside h2.widget-title {
   color: rgb(248 248 238 / var(--tw-text-opacity));
 }
 
+.eventpost-calendar-header .eventpost-cal-bt-prev,
+    .eventpost-calendar-header .eventpost-cal-bt-next {
+  --tw-text-opacity: 1;
+  color: rgb(15 39 67 / var(--tw-text-opacity));
+}
+
+.eventpost-calendar-header .eventpost_cal_bt {
+  --tw-text-opacity: 1;
+  color: rgb(43 84 133 / var(--tw-text-opacity));
+}
+
+.smooth_slider {
+  position: relative;
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .smooth_slider {
+    height: 24rem;
+  }
+}
+
+.smooth_slider .sldr_title {
+  display: none;
+}
+
+.smooth_slider .smooth_slideri {
+  height: 100%;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 39 67 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.smooth_slider .smooth_slider_thumbnail {
+  margin-right: 1rem;
+  height: 50%;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .smooth_slider .smooth_slider_thumbnail {
+    height: 100%;
+    width: 66.666667%;
+  }
+}
+
+.smooth_slider .smooth_slideri h2 {
+  margin: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .smooth_slider .smooth_slideri h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .smooth_slider .smooth_slideri h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.smooth_slider .smooth_slideri h2 a{
+}
+
+.smooth_slider .smooth_slideri span {
+  margin: 1rem;
+  display: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(179 176 193 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .smooth_slider .smooth_slideri span {
+    display: block;
+  }
+}
+
+.smooth_slider .smooth_slideri p.more{
+}
+
+.smooth_slider .smooth_next{
+}
+
+.smooth_slider .smooth_nav {
+  position: absolute;
+  bottom: 1rem;
+  left: 0.5rem;
+  z-index: 10;
+}
+
+.smooth_slider .smooth_nav .smooth_slider_nnav {
+  margin-right: 0.25rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.smooth_slider .smooth_nav .smooth_slider_nnav:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(54 124 207 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.smooth_slider .smooth_nav .smooth_slider_nnav.activeSlide {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 198 116 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.smooth_slider .smooth_prev{
+}
+
+.smooth_slider .smooth_slider_eshortcode{
+}
+
+.smooth_slider .smooth_more a{
+}
+
 .hover\:bg-blue-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(54 124 207 / var(--tw-bg-opacity));
@@ -1428,14 +1518,6 @@ aside h2.widget-title {
     display: none;
   }
 
-  .laptop\:h-96 {
-    height: 24rem;
-  }
-
-  .laptop\:h-full {
-    height: 100%;
-  }
-
   .laptop\:w-1\/3 {
     width: 33.333333%;
   }
@@ -1456,17 +1538,8 @@ aside h2.widget-title {
     background-image: url("assets/images/header.png");
   }
 
-  .laptop\:p-8 {
-    padding: 2rem;
-  }
-
   .laptop\:pt-0 {
     padding-top: 0px;
-  }
-
-  .laptop\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 }
 
@@ -1478,9 +1551,4 @@ aside h2.widget-title {
   .desktop\:w-2\/3 {
     width: 66.666667%;
   }
-
-  .desktop\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-}
+} 

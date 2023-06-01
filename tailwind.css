@@ -265,7 +265,55 @@ aside{
 .footer{
     a{
         @apply text-white hover:text-orange-200;
-        
     }
-    
 }
+.eventpost-calendar-header{
+    .eventpost-cal-bt-prev,
+    .eventpost-cal-bt-next{
+        @apply text-blue-800;
+    }
+    .eventpost_cal_bt{
+        @apply text-blue-600;
+    }
+}
+.smooth_slider{
+    @apply w-full h-80 laptop:h-96 overflow-hidden relative;
+}
+.smooth_slider .sldr_title{
+    @apply hidden;
+}
+.smooth_slider .smooth_slideri{
+    @apply w-full bg-blue-800 text-white h-full;
+}
+.smooth_slider .smooth_slider_thumbnail{
+    @apply w-full h-1/2 laptop:h-full laptop:w-2/3 mr-4;
+}
+.smooth_slider .smooth_slideri h2{
+    @apply text-white text-xl m-4 laptop:text-2xl desktop:text-3xl;
+}
+.smooth_slider .smooth_slideri h2 a{}
+.smooth_slider .smooth_slideri span{
+    @apply text-gray-300 text-base m-4 hidden laptop:block;
+}
+.smooth_slider .smooth_slideri p.more{}
+.smooth_slider .smooth_next{}
+.smooth_slider .smooth_nav{
+    @apply absolute bottom-4 left-2 z-10;
+    .smooth_slider_nnav{
+        @apply px-3 py-2 bg-white rounded-full mr-1;
+
+        &:hover{
+            @apply bg-blue-400 text-white;
+            
+        }
+        &.activeSlide{
+            @apply bg-green-600 text-white;
+            
+}
+
+            
+}
+        
+
+}
+.smooth_slider .smooth_prev{} .smooth_slider .smooth_slider_eshortcode{} .smooth_slider .smooth_more a{} 

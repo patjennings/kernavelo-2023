@@ -18,7 +18,6 @@
         <title><?php wp_title(''); ?></title>
         <link rel="icon" type="image/x-icon" href="<?php echo get_bloginfo( 'template_directory' );?>/assets/images/favicon.ico">
         <link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
-        <script src="<?php echo get_bloginfo( 'template_directory' );?>/js/scripts.js"></script>
                       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
                       <!--[if lt IE 9]>
                       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
